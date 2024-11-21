@@ -54,3 +54,58 @@ let myName = {
 }
 
 console.log(myName)
+
+////////////// Functions ////////////////
+
+function toGreet(str) {
+    return ("Hi " + str);
+}
+console.log(toGreet("Shantanu"));
+console.log(toGreet("Sushant"));
+
+
+//////////// CallBacks /////////////////
+
+function sum(a, b) {
+    return (a + b);
+}
+
+function calculate(fn) {
+    return fn(3, 5);
+}
+
+let result = calculate(sum);
+console.log(result);
+
+//---------- Synchronous -----------
+
+function demo() {
+    let ans = 0;
+    for (let i = 0; i < 1000; i++) {
+        ans = ans + i;
+    }
+    return ans;
+}
+console.log(demo());
+
+//---------- Asynchronous (setTimeout)-----------
+
+function fetchData() {
+    console.log("requesting data from the ChatGpt Server [] ");
+
+    setTimeout(() => {
+        console.log("Data Received from the ChatGpt Sever [] ");
+    }, 3000);
+}
+
+fetchData();
+
+// Special Case : In Above E.g setTimeout wait for 3 sec in that time it executes the below function becuase in below e.g setTimeout is low as compare to above example while Waiting for Above E.g it executes the Below function then Above E.g
+setTimeout(function timeout() {
+    console.log("Click the Button!");
+}, 1000);
+
+let add = 0;
+for (let i = 0; i < 1000000000; i++) {
+    add = add + i;
+}
